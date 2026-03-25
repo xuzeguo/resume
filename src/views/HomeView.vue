@@ -3,14 +3,11 @@
     <div class="person-info">
       <h1>郭旭泽</h1>
       <p>
-        <span class="tag-white">求职中</span>
-        <span class="tag-white">目前离职</span>
+        <span class="tag-white">在职</span>
+        <span class="tag-white">前端负责人</span>
       </p>
-      <p class="black-text">前端工作经验 8 年，年龄 30</p>
-      <p class="black-text">
-        电话 <a href="tel:17621063871">17621063871</a> &nbsp;&nbsp; 邮箱
-        <a href="mailto:xuzeguo@foxmail.com">xuzeguo@foxmail.com</a>
-      </p>
+      <p class="black-text">前端工作经验 8 年</p>
+      <p class="black-text">电话 176****3871 &nbsp;&nbsp; 邮箱 *******@foxmail.com</p>
       <p>
         <span class="tag-white">Vue</span>
         <span class="tag-white">JavaScript/TypeScript</span>
@@ -61,6 +58,10 @@
 
     <div class="job-detail work-summary">
       <div class="job-title">
+        <span class="name">晶栅科技（上海）</span>
+        <div class="time">2025-04 ~ 至今</div>
+      </div>
+      <div class="job-title">
         <span class="name">敏桥科技</span>
         <div class="time">2021-09 ~ 2024-09</div>
       </div>
@@ -77,6 +78,17 @@
     <div class="title">
       <span>项目经历</span>
       <div class="line"></div>
+    </div>
+
+    <div class="job-detail">
+      <div class="job-title">
+        <span class="name">晶栅科技（上海）</span>
+        <div class="time">2025-04 ~ 至今</div>
+      </div>
+      <div class="job-desc">前端负责人</div>
+      <ul>
+        <li>负责架构和团队管理</li>
+      </ul>
     </div>
 
     <div class="job-detail">
