@@ -1,0 +1,116 @@
+a {
+  cursor: pointer;
+  color: #37b24d !important;
+}
+.black-text {
+  color: #212529;
+}
+p {
+  margin-top: 10px;
+}
+
+.tag-black {
+  display: inline-block;
+  height: 23px;
+  line-height: 20px;
+  padding: 0 7px;
+  background-color: #212529;
+  border: 1px solid #212529;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.tag-black + .tag-black {
+  margin-left: 10px;
+}
+
+.tag-white {
+  display: inline-block;
+  height: 21px;
+  line-height: 20px;
+  padding: 0 7px;
+  border: 1px solid #495057;
+  color: #495057;
+  background-color: transparent;
+  font-size: 12px;
+  border-radius: 10px;
+}
+.tag-white + .tag-white {
+  margin-left: 10px;
+}
+
+.content {
+  width: 1000px;
+  height: 100%;
+  padding: 20px 40px;
+  margin: 0 auto;
+  background-color: #fff;
+  .person-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    > * {
+      width: 100%;
+      text-align: right;
+    }
+    h1 {
+      font-size: 3em;
+      color: #212529;
+    }
+  }
+  .title {
+    margin: 30px 0;
+    display: flex;
+    font-size: 1.5em;
+    color: #212529;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .line {
+      height: 1px;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      background-color: #dee2e6;
+    }
+  }
+  .job-detail {
+    margin-bottom: 20px;
+    .job-title {
+      display: flex;
+      justify-content: space-between;
+      .name {
+        color: #37b24d !important;
+        font-weight: 700;
+        font-size: 1.2em;
+        line-height: 2em;
+      }
+      .time {
+        font-size: 1em;
+        color: #adb5bd;
+        line-height: 2em;
+      }
+    }
+    .job-desc {
+      font-size: 1em;
+      color: #adb5bd;
+    }
+    .project-title {
+      margin-top: 20px;
+      font-size: 1em;
+      color: #495057;
+    }
+    ul {
+      margin-top: 10px;
+      color: #868e96;
+      font-size: 14px;
+      margin-left: 18px;
+      padding: 0;
+      margin-left: 18px;
+      li {
+        line-height: 2em;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+
+
+<!DOCTYPE html>
+<html>
+  <script src="./a.js" refer='refer' />
+  <script src="./b.js" async='async' />
+  <script src="./c.js" />
+  <style 'console.log(4)' />
+  <body>
+    <script>
+      console.log(5)
+
+      document.addEventListener('load', () => {console.log(6)})
+
+      document.addEventListener('DOMContentloaded', () => {console.log(7)})
+      let i = 0
+      while(i < 9999) {
+        i++
+      }
+      console.log(8)
+    </script>
+  </body>
+</html>
