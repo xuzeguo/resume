@@ -41,11 +41,14 @@ p {
 }
 
 .content {
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   height: 100%;
   padding: 20px 40px;
   margin: 0 auto;
   background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+
   .person-info {
     display: flex;
     flex-direction: column;
@@ -55,7 +58,7 @@ p {
       text-align: right;
     }
     h1 {
-      font-size: 3em;
+      font-size: clamp(2rem, 5vw, 3em);
       color: #212529;
     }
   }
@@ -69,17 +72,26 @@ p {
     align-items: center;
     .line {
       height: 1px;
-      -webkit-box-flex: 1;
-      -ms-flex: 1;
       flex: 1;
       background-color: #dee2e6;
     }
   }
+  .work-summary {
+    .job-title {
+      margin-bottom: 4px;
+    }
+    .job-title + .job-title {
+      margin-top: 8px;
+    }
+  }
+
   .job-detail {
     margin-bottom: 20px;
     .job-title {
       display: flex;
       justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
       .name {
         color: #37b24d !important;
         font-weight: 700;
@@ -90,6 +102,7 @@ p {
         font-size: 1em;
         color: #adb5bd;
         line-height: 2em;
+        flex-shrink: 0;
       }
     }
     .job-desc {
@@ -101,16 +114,72 @@ p {
       font-size: 1em;
       color: #495057;
     }
+    .resume-label {
+      display: block;
+      margin-top: 16px;
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #495057;
+    }
+    .resume-label:first-child {
+      margin-top: 12px;
+    }
+    p.resume-desc {
+      margin-top: 8px;
+      color: #868e96;
+      font-size: 14px;
+      line-height: 2em;
+    }
     ul {
       margin-top: 10px;
       color: #868e96;
       font-size: 14px;
       margin-left: 18px;
       padding: 0;
-      margin-left: 18px;
       li {
         line-height: 2em;
       }
     }
+    .resume-figure {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  .content {
+    padding: 16px 20px;
+  }
+}
+
+@media print {
+  body {
+    background: #fff !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  #app {
+    background: #fff !important;
+    padding-bottom: 0 !important;
+  }
+  .content {
+    max-width: none;
+    width: 100%;
+    box-shadow: none;
+    padding: 0 12px;
+  }
+  a[href^='tel:'],
+  a[href^='mailto:'] {
+    text-decoration: none;
+    color: #212529 !important;
   }
 }
