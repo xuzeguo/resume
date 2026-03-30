@@ -131,6 +131,14 @@ p {
       font-size: 14px;
       line-height: 2em;
     }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.9em;
+      padding: 0.1em 0.35em;
+      border-radius: 4px;
+      background: #f1f3f5;
+      color: #212529;
+    }
     ul {
       margin-top: 10px;
       color: #868e96;
@@ -139,6 +147,10 @@ p {
       padding: 0;
       li {
         line-height: 2em;
+        strong {
+          color: #495057;
+          font-weight: 600;
+        }
       }
     }
     .resume-figure {

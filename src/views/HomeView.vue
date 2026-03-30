@@ -26,27 +26,44 @@
     <div class="job-detail">
       <ul>
         <li>
-          熟练使用 JavaScript 的 ES6 新特性、DOM 操作、原型链、闭包、class、事件轮询等
-        </li>
-        <li>熟悉使用 TypeScript 强类型语言对数据进行约束，包括泛型、类型体操等</li>
-        <li>
-          熟练 Vue2/3 全家桶，了解相关底层双向数据绑定、数组方法重写、组件化、自定义指令、diff
-          算法源码的设计思路
-        </li>
-        <li>熟练使用 Vue2、3，熟悉底层原理之间的优劣差异与设计思路</li>
-        <li>熟悉混合开发以及微前端 qiankun 等低代码平台方案</li>
-        <li>熟练使用 ECharts 与地图完成可视化大屏数据展示开发</li>
-        <li>
-          了解常用算法和基础数据结构，应用于优化 DOM 操作、处理大量数据、实现复杂的用户交互等方面
+          <strong>前端基础：</strong>
+          精通 JavaScript（原型链、闭包、事件循环、异步机制等），具备扎实的语言底层理解与问题分析能力
         </li>
         <li>
-          熟练掌握前端 SOLID 设计原则以及前端常用设计模式，主导设计过部门内部前端组件的经验；掌握前端常见性能优化手段，显著降低
-          FCP 和 LCP 时间
+          <strong>框架体系：</strong>
+          精通 Vue2/3 及生态（Pinia / Vue Router），理解响应式原理、Diff 算法及组件化设计思想
         </li>
-        <li>具备较强的跨团队协作与推动能力，拥有独立开发能力</li>
-        <li>针对生产环境遇到的问题，具有排查问题和定位问题的能力</li>
         <li>
-          有前端项目管理，需求分析、工期安排、技术难点 demo、任务分配、进度把控、项目架构的能力
+          <strong>TypeScript：</strong>
+          熟练使用泛型与类型设计，提升复杂业务场景下代码可维护性与可扩展性
+        </li>
+        <li>
+          <strong>工程化能力：</strong>
+          熟悉 Webpack / Vite 构建原理，具备前端性能优化经验（LCP/FCP 优化、资源分包、缓存策略等）
+        </li>
+        <li>
+          <strong>架构设计：</strong>
+          具备低代码平台、组件化体系及微前端（qiankun）架构设计与落地经验
+        </li>
+        <li>
+          <strong>复杂交互与数据处理：</strong>
+          具备复杂数据建模与高频交互处理经验，能够优化大规模数据渲染与用户体验
+        </li>
+        <li>
+          <strong>全链路理解：</strong>
+          具备 Node.js 基础能力，理解前后端协作流程及接口设计规范
+        </li>
+        <li>
+          <strong>稳定性与质量保障：</strong>
+          熟悉代码规范、CI/CD 流程及前端监控体系建设，具备线上问题快速定位与解决能力
+        </li>
+        <li>
+          <strong>团队协作与推进能力：</strong>
+          具备需求分析、技术方案设计、任务拆解及进度推进经验，能够在复杂环境中保障项目交付
+        </li>
+        <li>
+          <strong>AI 协作开发：</strong>
+          在开发流程中引入 AI 工具（ChatGPT / Copilot），用于代码生成、方案设计与问题排查，提升研发效率
         </li>
       </ul>
     </div>
@@ -86,8 +103,76 @@
         <div class="time">2025-04 ~ 至今</div>
       </div>
       <div class="job-desc">前端负责人</div>
+      <p>
+        <span class="tag-white">Vue 3</span>
+        <span class="tag-white">TypeScript</span>
+        <span class="tag-white">Vite</span>
+        <span class="tag-white">Pinia</span>
+        <span class="tag-white">Element Plus</span>
+        <span class="tag-white">Module Federation</span>
+      </p>
+
+      <div class="project-title">MDM 物流管理平台</div>
+      <strong class="resume-label">项目描述：</strong>
+      <p class="resume-desc">
+        主导平台前端架构从零搭建：以 URL 适配层收敛单体与微服务路由差异；在请求层注入 Gray-Version Header
+        做灰度染色，业务对部署形态与灰度策略无感知。负责虚拟列表、请求基础设施、内存与配置治理、Module Federation
+        微前端、内部组件库及性能与 AI 工程等方向落地。
+      </p>
+      <strong class="resume-label">项目亮点：</strong>
       <ul>
-        <li>负责架构和团队管理</li>
+        <li>
+          <strong>虚拟列表与渲染性能：</strong>
+          遇到万级列表快速滚动白屏、布局抖动的问题 → 设计双模式虚拟滚动（固定高 O(1) 寻址 / 动态高前缀和 + 二分 +
+          ResizeObserver 增量），渲染层统一 <code>translateY</code> 走合成层、<code>IntersectionObserver</code>
+          触发加载，避免 scroll 轮询 →
+          <strong>万级节点场景滚动帧率稳定在约 60fps。</strong>
+        </li>
+        <li>
+          <strong>请求层：</strong>
+          遇到并发挂载导致相同接口重复打满、以及生产环境传输安全的问题 → 以「共享 Promise」做 TTL
+          内请求去重（递归排序 + JSON 幂等 key、LRU 上限与定时淘汰），并在 Axios 拦截器统一 AES（POST 整包 /
+          GET 逐字段）加解密，编译期开关分离开发/生产 →
+          重复请求与带宽浪费显著下降，业务侧零侵入接入密文通道。
+        </li>
+        <li>
+          <strong>内存与配置持久化：</strong>
+          遇到 Keep-Alive 长期运行实例不释放、以及列配置含函数无法落 localStorage 的问题 →
+          待移除视图经防抖批量替换 <code>include</code> 新引用强制回收；配置「数据/行为」分层，dot-path 提取/还原函数引用 →
+          SPA 内存堆积与表格高级配置丢失问题消除。
+        </li>
+        <li>
+          <strong>微前端（Module Federation）：</strong>
+          遇到多子应用重复打包 Vue 生态、沙箱与样式污染风险 → 主 Shell + 子应用拆分，Vue/Vue Router/Pinia 等
+          <code>shared singleton</code>；Proxy 沙箱与按场景的 CSS 隔离策略；bootstrap/mount/unmount 协议清理副作用；props /
+          CustomEvent / 共享 store 三层通信 →
+          公共依赖体积收敛，多次挂载卸载无泄漏与状态割裂。
+        </li>
+        <li>
+          <strong>组件库建设：</strong>
+          遇到业务侧组件分散、主题与按需接入成本高的问题 → pnpm Monorepo 分层（components/hooks/utils/tokens），Headless + Design
+          Token 主题体系，Vite library 双格式 + 条件导出与按需 resolver，Changesets 管版本与 CHANGELOG、CI 发布私有源 →
+          消费方近乎零配置获 tree-shaking，品牌换肤以覆盖 alias token 完成。
+        </li>
+        <li>
+          <strong>性能优化（构建与体验）：</strong>
+          遇到首屏 JS 体积大、性能回退难以及时发现的问题 → Rollup <code>manualChunks</code> 按路由分层 vendor /
+          公共 / 页面，Brotli + Gzip 双压缩；运行时以 <code>computed</code>、<code>v-memo</code>、异步 +
+          Suspense 与空闲 prefetch；网络层 stale-while-revalidate 与图片 WebP、lazy；CWV 采集 + Lighthouse CI
+          流水线卡点 →
+          <strong>首屏 JS 传输体积降低约 60%</strong>，关键页面性能劣化可被 CI 拦截。
+        </li>
+        <li>
+          <strong>AI 工程：</strong>
+          遇到业务需流式对话、上下文成本与幻觉控制的问题 → 封装 <code>useStreamChat</code>（ReadableStream + AbortController）；Prompt
+          分层与 JSON 上下文截断；本地知识库分块 + embedding，Worker 内相似度检索 Top-K 拼入 prompt →
+          主线程不被检索阻塞，回答更贴单据与手册。
+        </li>
+        <li>
+          <strong>AI 与业务闭环：</strong>
+          遇到模型需在系统内执行查单、审批等动作的问题 → 自建 MCP Server 暴露业务工具，由 tool call
+          驱动；前端作 MCP Client 做注册、路由与结果回传 → AI Agent 可在权限与审计约束下完成闭环操作。
+        </li>
       </ul>
     </div>
 
@@ -139,22 +224,19 @@
       <strong class="resume-label">项目亮点：</strong>
       <ul>
         <li>
-          整体系统框架搭建，采用工厂模式批量生产一些常用组件（如：按钮）和统一管理下拉框、多选框等配置项，使用建造者模式对组件进行组装，生成想要的结构（如：将标题、按钮和面包屑导航等组件组装成头部组件），使用单例模式确保某些组件在应用程序中只有一个组件实例
+          <strong>组件库与搭建效率：</strong>
+          遇到基础控件重复开发、页面模块手工拼装成本高的问题 → 采用工厂/建造者/单例与配置项集中管理，批量产出按钮/表单项并装配头部等复合布局 →
+          组件复用与页面搭建效率明显提升，低代码场景交付节奏显著加快。
         </li>
         <li>
-          缩短上市时间：通过低代码平台的快速开发能力，大幅缩短了新功能上线的时间，帮助业务团队更快响应市场需求
+          <strong>性能优化（LCP）：</strong>
+          遇到首屏与资源策略导致 LCP 过高、体验差的问题 → 通过数据缓存与加载/渲染策略优化 →
+          <strong>LCP 由约 56s 降至约 5s。</strong>
         </li>
         <li>
-          动态表单生成：实现了基于数据模型的动态表单生成功能，使得非技术人员也能轻松创建和修改表单，提高了业务敏捷性。
-        </li>
-        <li>
-          基于内核 + 插件架构对表单流程进行封装，提供常用校验的原子化插件和自定义扩展的能力，降低了表单校验业务逻辑和功能实现的耦合。
-        </li>
-        <li>
-          通过合理运用数据缓存策略，成功地优化了前端应用的性能，为用户提供了更快速、流畅的使用体验，将 LCP 从 56 秒优化到 5 秒；
-        </li>
-        <li>
-          通过优化解码缓冲区解决 32 位浏览器内存瓶颈；通过断流重连、追帧等方式进行视频流的优化，提升用户体验
+          <strong>性能优化（端侧与多媒体）：</strong>
+          遇到 32 位浏览器解码占用过高、视频弱网易卡顿的问题 → 优化解码缓冲区，配合断流重连与追帧 →
+          内存压力与播放稳定性改善，弱网下可用性提升。
         </li>
       </ul>
     </div>
@@ -190,21 +272,20 @@
       <strong class="resume-label">项目亮点：</strong>
       <ul>
         <li>
-          使用 chrome.runtime、chrome.devtools.panels 等 Chrome 的能力开发 RF devTools
-          工具，主要提供 context 数据状态查看、关联关系日志查看、管道条件状态等能力，帮助研发通过 devTools
-          调试页面，提升研发效率与体验；同时通过 devTools 的日志功能，排查线上问题耗时由原来的 2h 减少到 20m 以内
+          <strong>工程与首屏性能：</strong>
+          遇到包体偏大、Prefetch 不合理拖慢首屏的问题 → 基于监控制定优化方案并自定义插件治理 Prefetch →
+          <strong>包体积约降 30%–50%，打包约 20s 内，FCP、LCP 约提升 80% 以上。</strong>
         </li>
         <li>
-          稳定性建设：组件、页面及 BFF 均增加了单元测试，同时结合 GitLab Codebase 能力增加覆盖率
-          CI/CD 卡点，在研发标准流程中增加自测覆盖率、大项项目增加众测、自动化测试等流程，保障线上平稳。同时制定代码规范，并完成多组宣推，增加代码静态卡点，提升代码稳健，同时增加
-          code review 强卡点，并配置 code review 看板，提升 code review 率。
+          <strong>数据处理性能：</strong>
+          遇到树形数据反复拼装、大数据量下耗时偏高的问题 → 采用 Map + 单次循环构建树，时间复杂度 O(n) →
+          组装耗时显著下降，复杂列表/配置场景交互更流畅。
         </li>
         <li>
-          根据前端监控平台的量化指标数据，制定对应优化策略方案，实现既定优化目标。并自定义插件处理 Prefetch
-          预加载问题，降低 30%–50% 的打包体积，打包时间减少到 20s 内。FCP、LCP 提升 80% 以上。
-        </li>
-        <li>
-          数据优化，使用 map + 循环的方式对数据进行 tree 结构处理，时间复杂度为 O(n)，极大地提高了运算性能
+          <strong>组件与质量侧贡献：</strong>
+          遇到线上问题靠人工捞日志、单次定位动辄数小时的问题 → 建设 RF devTools 与页面结构化日志能力 →
+          <strong>典型问题排查由约 2h 缩短至约 20min；</strong>
+          同时推动单测、GitLab 覆盖率 CI 卡点与 CR 看板，组件/页面/BFF 质量可度量。
         </li>
       </ul>
     </div>
