@@ -7,7 +7,10 @@
         <span class="tag-white">前端负责人</span>
       </p>
       <p class="black-text">前端工作经验 8 年</p>
-      <p class="black-text">电话 176****3871 &nbsp;&nbsp; 邮箱 *******@foxmail.com</p>
+      <p class="black-text">
+        电话 <a href="tel:17621063871">17621063871</a> &nbsp;&nbsp; 邮箱
+        <a href="mailto:xuzeguo@foxmail.com">xuzeguo@foxmail.com</a>
+      </p>
       <p>
         <span class="tag-white">Vue</span>
         <span class="tag-white">JavaScript/TypeScript</span>
@@ -27,7 +30,8 @@
       <ul>
         <li>
           <strong>前端基础：</strong>
-          精通 JavaScript（原型链、闭包、事件循环、异步机制等），具备扎实的语言底层理解与问题分析能力
+          精通
+          JavaScript（原型链、闭包、事件循环、异步机制等），具备扎实的语言底层理解与问题分析能力
         </li>
         <li>
           <strong>框架体系：</strong>
@@ -63,7 +67,7 @@
         </li>
         <li>
           <strong>AI 协作开发：</strong>
-          在开发流程中引入 AI 工具（ChatGPT / Copilot），用于代码生成、方案设计与问题排查，提升研发效率
+          熟练使用 Cursor、Claude、Codex 等辅助代码编写、方案设计与问题排查，缩短开发与联调周期
         </li>
       </ul>
     </div>
@@ -116,46 +120,54 @@
       <strong class="resume-label">项目描述</strong>
       <p class="resume-desc">
         从零主导前端架构：构建 URL 适配衔接单体与微服务路由差异；请求层注入 Gray-Version Header
-        做灰度染色，部署与灰度策略对业务透明。覆盖虚拟列表、请求基础设施、内存与配置治理、Module Federation
-        微前端、内部组件库、性能及 AI 工程等板块。
+        做灰度染色，部署与灰度策略对业务透明。覆盖虚拟列表、请求基础设施、内存与配置治理、Module
+        Federation 微前端、内部组件库、性能与工程化建设等板块。
       </p>
       <strong class="resume-label">项目亮点</strong>
       <ul>
         <li>
           <strong>虚拟列表与渲染：</strong>
-          万级列表快速滚动易白屏、抖动 → 双模式虚拟滚动（固定高直接寻址 / 动态高前缀和 + 二分 + ResizeObserver 增量），列表项用
-          <code>translateY</code> 走合成层，底部 IO 触发加载 → <strong>万级节点滚动约 60fps。</strong>
+          万级列表快速滚动易白屏、抖动 → 双模式虚拟滚动（固定高直接寻址 / 动态高前缀和 + 二分 +
+          ResizeObserver 增量），列表项用
+          <code>translateY</code> 走合成层，底部 IO 触发加载 →
+          <strong>万级节点滚动约 60fps。</strong>
         </li>
         <li>
           <strong>请求与安全：</strong>
-          并发挂载重复打满相同接口 → TTL 内「共享 Promise」去重（幂等 key、LRU 与定时淘汰）；生产传输安全 → Axios
-          拦截器统一 AES（POST 整包、GET 逐字段），编译期开关区分开发/生产，业务无侵入。
+          并发挂载重复打满相同接口 → TTL 内「共享 Promise」去重（幂等 key、LRU
+          与定时淘汰）；生产传输安全 → Axios 拦截器统一 AES（POST 整包、GET
+          逐字段），编译期开关区分开发/生产，业务无侵入。
         </li>
         <li>
           <strong>内存与配置持久化：</strong>
-          Keep-Alive 长期驻留占内存；表格列配置含函数无法落盘 → 防抖汇总待移除路由并替换 <code>include</code>
-          新引用触发真回收；配置拆分数据面/行为面，dot-path 序列化与回填，完整恢复含 formatter 的列配置。
+          Keep-Alive 长期驻留占内存；表格列配置含函数无法落盘 → 防抖汇总待移除路由并替换
+          <code>include</code>
+          新引用触发真回收；配置拆分数据面/行为面，dot-path 序列化与回填，完整恢复含 formatter
+          的列配置。
         </li>
         <li>
           <strong>微前端：</strong>
-          多子应用重复打包与样式污染 → Module Federation 拆分 Shell/子应用，Vue 生态 <code>shared</code>
-          单例，卸载协议清理副作用；结合 Proxy 沙箱与场景化 CSS 隔离，props / CustomEvent / 共享 store 分层通信。
+          多子应用重复打包与样式污染 → Module Federation 拆分 Shell/子应用，Vue 生态
+          <code>shared</code>
+          单例，卸载协议清理副作用；结合 Proxy 沙箱与场景化 CSS 隔离，props / CustomEvent / 共享
+          store 分层通信。
         </li>
         <li>
           <strong>组件库：</strong>
           组件散落、主题与按需成本高 → pnpm Monorepo（组件/hooks/utils/tokens）、Headless + Design
-          Token，Vite library 双格式与按需 resolver，Changesets + CI 发布私有化 npm → tree-shaking 与换肤成本可控。
+          Token，Vite library 双格式与按需 resolver，Changesets + CI 发布私有化 npm → tree-shaking
+          与换肤成本可控。
         </li>
         <li>
           <strong>性能工程：</strong>
-          首屏偏大、劣化不易发现 → 路由粒度 manualChunks、Brotli/Gzip；运行时 computed、<code>v-memo</code>、异步模块与
-          prefetch；接口 SWR、图片 WebP + lazy；CWV 采集 + Lighthouse CI 回归卡点 →
+          首屏偏大、劣化不易发现 → 路由粒度 manualChunks、Brotli/Gzip；运行时
+          computed、<code>v-memo</code>、异步模块与 prefetch；接口 SWR、图片 WebP + lazy；CWV 采集 +
+          Lighthouse CI 回归卡点 →
           <strong>首屏 JS 传输体积约降 60%。</strong>
         </li>
         <li>
-          <strong>AI：</strong>
-          流式对话与幻觉控制 → <code>useStreamChat</code>、Prompt 分层与上下文截断；本地知识分块 + embedding，Worker
-          内 Top-K 检索拼入 prompt。业务闭环 → 自建 MCP Server 暴露查单/审批等工具，前端 Client 路由 tool call 与结果回传。
+          <strong>研发提效（AI 辅助）：</strong>
+          日常搭配 Cursor、Claude、Codex 等辅助编码、方案拆解与排障，加快迭代与评审；
         </li>
       </ul>
     </div>
@@ -178,24 +190,18 @@
       <div class="project-title">低代码后台管理平台</div>
       <strong class="resume-label">项目描述</strong>
       <p class="resume-desc">
-        中后台大量表单与列表驱动搭建低代码平台，核心是页面渲染引擎（PRE）：依托页面配置渲染 UI、加载组件、维护数据与交互。
+        中后台大量表单与列表驱动搭建低代码平台，核心是页面渲染引擎（PRE）：依托页面配置渲染
+        UI、加载组件、维护数据与交互。
       </p>
       <strong class="resume-label">主要职责</strong>
       <ul>
+        <li>通用字典与矩阵类自定义组件（可配置 XY 轴、多类型单元格），支撑复杂配置场景。</li>
+        <li>WebSocket 实时推送替代高频轮询，断线重连，降低带宽与接口压力。</li>
+        <li>权限模块用浏览器缓存 + 时间戳降鉴权频次，封装权限组件统一判断口径。</li>
+        <li>Axios 封装与响应拦截：错误处理、鉴权防抖、token 过期自动续期并回放未完成请求。</li>
         <li>
-          通用字典与矩阵类自定义组件（可配置 XY 轴、多类型单元格），支撑复杂配置场景。
-        </li>
-        <li>
-          WebSocket 实时推送替代高频轮询，断线重连，降低带宽与接口压力。
-        </li>
-        <li>
-          权限模块用浏览器缓存 + 时间戳降鉴权频次，封装权限组件统一判断口径。
-        </li>
-        <li>
-          Axios 封装与响应拦截：错误处理、鉴权防抖、token 过期自动续期并回放未完成请求。
-        </li>
-        <li>
-          客户端多进程窗口做重计算隔离；大数据列表三层 DOM + transform 模拟滚动，支撑海量行展示与编辑。
+          客户端多进程窗口做重计算隔离；大数据列表三层 DOM + transform
+          模拟滚动，支撑海量行展示与编辑。
         </li>
       </ul>
       <strong class="resume-label">项目亮点</strong>
@@ -207,11 +213,13 @@
         </li>
         <li>
           <strong>首屏体验：</strong>
-          缓存与资源策略不足导致 LCP 很差 → 数据缓存与加载/渲染优化 → <strong>LCP 约由 56s 降至 5s。</strong>
+          缓存与资源策略不足导致 LCP 很差 → 数据缓存与加载/渲染优化 →
+          <strong>LCP 约由 56s 降至 5s。</strong>
         </li>
         <li>
           <strong>端侧与多媒体：</strong>
-          32 位环境解码占用高、视频弱网易卡顿 → 解码缓冲区优化 + 断流重连与追帧 → 稳定性与弱网可用性改善。
+          32 位环境解码占用高、视频弱网易卡顿 → 解码缓冲区优化 + 断流重连与追帧 →
+          稳定性与弱网可用性改善。
         </li>
       </ul>
     </div>
@@ -236,18 +244,10 @@
       </p>
       <strong class="resume-label">主要职责</strong>
       <ul>
-        <li>
-          需求评审、技术方案与反讲、测试用例共建与评审，保持需求透明、节奏可控。
-        </li>
-        <li>
-          渐进式重构 + 小流量灰度，平滑迁移至新前端架构。
-        </li>
-        <li>
-          飞书与认证中心对接，实现多域名环境下的单点登录与会话打通。
-        </li>
-        <li>
-          制定代码规范与 CR 看板，结合监控、告警与 oncall，推动问题闭环与复盘。
-        </li>
+        <li>需求评审、技术方案与反讲、测试用例共建与评审，保持需求透明、节奏可控。</li>
+        <li>渐进式重构 + 小流量灰度，平滑迁移至新前端架构。</li>
+        <li>飞书与认证中心对接，实现多域名环境下的单点登录与会话打通。</li>
+        <li>制定代码规范与 CR 看板，结合监控、告警与 oncall，推动问题闭环与复盘。</li>
       </ul>
       <strong class="resume-label">项目亮点</strong>
       <ul>
@@ -262,8 +262,9 @@
         </li>
         <li>
           <strong>研发效能与质量：</strong>
-          RF devTools + 页面结构化日志 → <strong>典型线上问题定位由约 2h 缩至约 20min</strong>；组件/页面/BFF
-          单测与 GitLab 覆盖率 CI 卡点、CR 强卡点，质量可度量。
+          RF devTools + 页面结构化日志 →
+          <strong>典型线上问题定位由约 2h 缩至约 20min</strong>；组件/页面/BFF 单测与 GitLab 覆盖率
+          CI 卡点、CR 强卡点，质量可度量。
         </li>
       </ul>
     </div>
@@ -282,15 +283,9 @@
       <div class="project-title">正广和手机商城</div>
       <strong class="resume-label">主要职责</strong>
       <ul>
-        <li>
-          多机型移动端适配与体验问题收敛。
-        </li>
-        <li>
-          Token 过期无感刷新：拦截层自动重登并重放失败请求，保障下单与支付链路连续。
-        </li>
-        <li>
-          Canvas 实现页面水印；抓拍图作底图叠加自定义边框，满足运营与营销素材需求。
-        </li>
+        <li>多机型移动端适配与体验问题收敛。</li>
+        <li>Token 过期无感刷新：拦截层自动重登并重放失败请求，保障下单与支付链路连续。</li>
+        <li>Canvas 实现页面水印；抓拍图作底图叠加自定义边框，满足运营与营销素材需求。</li>
       </ul>
       <strong class="resume-label">项目亮点</strong>
       <ul>
@@ -299,9 +294,7 @@
           高频埋点打爆网络 → 有感知埋点接入统一 SDK，本地聚合、延时批量上报，离页flush →
           请求次数下降，报表仍完整。
         </li>
-        <li>
-          A/B 分流与实验对比，持续迭代转化；多渠道（微信等）整合扩大触达。
-        </li>
+        <li>A/B 分流与实验对比，持续迭代转化；多渠道（微信等）整合扩大触达。</li>
         <li>
           <strong>Service Worker：</strong>
           作轻量 API 网关，统一鉴权、格式化响应，前端业务层更薄、逻辑更一致。
