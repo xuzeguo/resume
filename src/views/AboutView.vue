@@ -3,7 +3,7 @@
     <h1>关于本页</h1>
     <p>本站为个人简历页面，由 Vue 3 + Vite 构建。</p>
     <p>
-      <RouterLink to="/">返回简历</RouterLink>
+      <RouterLink to="/resume">返回简历</RouterLink>
     </p>
   </div>
 </template>

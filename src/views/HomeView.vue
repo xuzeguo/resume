@@ -1,5 +1,17 @@
+<script setup lang="ts">
+import { RouterLink } from 'vue-router'
+</script>
+
 <template>
+  <!-- 贴左缘悬停显隐，点击回主页（打印/PDF 不输出） -->
+  <div class="edge-home">
+    <RouterLink class="edge-home__btn" to="/" title="回到首页">首页</RouterLink>
+  </div>
+
   <main class="content" id="contentToExport" aria-label="简历正文">
+    <p class="resume-back">
+      <RouterLink to="/">← 返回首页</RouterLink>
+    </p>
     <div class="person-info">
       <h1>郭旭泽</h1>
       <p>
@@ -67,7 +79,8 @@
         </li>
         <li>
           <strong>AI 协作开发：</strong>
-          熟练使用 Cursor、Claude、Codex 等辅助代码编写、方案设计与问题排查，缩短开发与联调周期
+          熟练使用 Cursor、Claude、Codex 等 AI 编程工具辅助需求分析、架构设计、代码实现与问题定位；具备 Prompt Engineering 及 Context
+          Engineering 实践经验，能够构建项目级开发规则（Rules）与知识库，辅助完成代码 Review、性能优化、测试用例生成及技术文档沉淀，实现复杂业务场景下的人机协同开发
         </li>
       </ul>
     </div>
@@ -80,7 +93,7 @@
     <div class="job-detail work-summary">
       <div class="job-title">
         <span class="name">晶栅科技（上海）</span>
-        <div class="time">2025-04 ~ 至今</div>
+        <div class="time">2025-04 ~ 2026-03</div>
       </div>
       <div class="job-title">
         <span class="name">敏桥科技</span>
@@ -104,7 +117,7 @@
     <div class="job-detail">
       <div class="job-title">
         <span class="name">晶栅科技（上海）</span>
-        <div class="time">2025-04 ~ 至今</div>
+        <div class="time">2025-04 ~ 2026-03</div>
       </div>
       <div class="job-desc">前端负责人</div>
       <p>
@@ -113,15 +126,12 @@
         <span class="tag-white">Vite</span>
         <span class="tag-white">Pinia</span>
         <span class="tag-white">Element Plus</span>
-        <span class="tag-white">Module Federation</span>
       </p>
 
       <div class="project-title">MDM 物流管理平台</div>
       <strong class="resume-label">项目描述</strong>
       <p class="resume-desc">
-        从零主导前端架构：构建 URL 适配衔接单体与微服务路由差异；请求层注入 Gray-Version Header
-        做灰度染色，部署与灰度策略对业务透明。覆盖虚拟列表、请求基础设施、内存与配置治理、Module
-        Federation 微前端、内部组件库、性能与工程化建设等板块。
+        从零主导前端架构，覆盖虚拟列表、请求基础设施、内存与配置治理、内部组件库、性能与工程化建设等板块。
       </p>
       <strong class="resume-label">项目亮点</strong>
       <ul>
@@ -146,13 +156,6 @@
           的列配置。
         </li>
         <li>
-          <strong>微前端：</strong>
-          多子应用重复打包与样式污染 → Module Federation 拆分 Shell/子应用，Vue 生态
-          <code>shared</code>
-          单例，卸载协议清理副作用；结合 Proxy 沙箱与场景化 CSS 隔离，props / CustomEvent / 共享
-          store 分层通信。
-        </li>
-        <li>
           <strong>组件库：</strong>
           组件散落、主题与按需成本高 → pnpm Monorepo（组件/hooks/utils/tokens）、Headless + Design
           Token，Vite library 双格式与按需 resolver，Changesets + CI 发布私有化 npm → tree-shaking
@@ -166,8 +169,9 @@
           <strong>首屏 JS 传输体积约降 60%。</strong>
         </li>
         <li>
-          <strong>研发提效（AI 辅助）：</strong>
-          日常搭配 Cursor、Claude、Codex 等辅助编码、方案拆解与排障，加快迭代与评审；
+          <strong>AI 协作开发：</strong>
+          熟练使用 Cursor、Claude、Codex 等 AI 编程工具辅助需求分析、架构设计、代码实现与问题定位；具备 Prompt Engineering 及 Context
+          Engineering 实践经验，能够构建项目级开发规则（Rules）与知识库，辅助完成代码 Review、性能优化、测试用例生成及技术文档沉淀，实现复杂业务场景下的人机协同开发。
         </li>
       </ul>
     </div>
@@ -319,4 +323,76 @@
 
 <style lang="scss" scoped>
 @import '@/assets/t.scss';
+
+.edge-home {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 14px;
+  z-index: 10000;
+  overflow: visible;
+  transition: width 0.18s ease;
+  &:hover {
+    width: 96px;
+  }
+}
+.edge-home__btn {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translate(calc(-100% - 6px), -50%);
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: #37b24d;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+.edge-home:hover .edge-home__btn {
+  transform: translate(0, -50%);
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+.edge-home:not(:hover) .edge-home__btn {
+  visibility: hidden;
+}
+.edge-home__btn:hover {
+  background: #2f9e44;
+}
+
+@media print {
+  .edge-home {
+    display: none !important;
+  }
+}
+
+.resume-back {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 12px 40px 0;
+  text-align: right;
+  font-size: 0.9rem;
+  a {
+    color: #868e96;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #37b24d;
+  }
+}
+@media (max-width: 1040px) {
+  .resume-back {
+    padding: 12px 20px 0;
+  }
+}
 </style>
