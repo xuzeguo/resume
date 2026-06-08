@@ -15,7 +15,8 @@ import { RouterLink } from 'vue-router'
     <div class="person-info">
       <h1>郭旭泽</h1>
       <p>
-        <span class="tag-white">在职</span>
+        <span class="tag-white">离职</span>
+        <span class="tag-white">高级前端工程师</span>
         <span class="tag-white">前端负责人</span>
       </p>
       <p class="black-text">前端工作经验 8 年</p>
@@ -79,8 +80,10 @@ import { RouterLink } from 'vue-router'
         </li>
         <li>
           <strong>AI 协作开发：</strong>
-          熟练使用 Cursor、Claude、Codex 等 AI 编程工具辅助需求分析、架构设计、代码实现与问题定位；具备 Prompt Engineering 及 Context
-          Engineering 实践经验，能够构建项目级开发规则（Rules）与知识库，辅助完成代码 Review、性能优化、测试用例生成及技术文档沉淀，实现复杂业务场景下的人机协同开发
+          熟练使用 Cursor、Claude、Codex 等 AI
+          编程工具辅助需求分析、架构设计、代码实现与问题定位；具备 Prompt Engineering 及 Context
+          Engineering 实践经验，能够构建项目级开发规则（Rules）与知识库，辅助完成代码
+          Review、性能优化、测试用例生成及技术文档沉淀，实现复杂业务场景下的人机协同开发
         </li>
       </ul>
     </div>
@@ -170,8 +173,10 @@ import { RouterLink } from 'vue-router'
         </li>
         <li>
           <strong>AI 协作开发：</strong>
-          熟练使用 Cursor、Claude、Codex 等 AI 编程工具辅助需求分析、架构设计、代码实现与问题定位；具备 Prompt Engineering 及 Context
-          Engineering 实践经验，能够构建项目级开发规则（Rules）与知识库，辅助完成代码 Review、性能优化、测试用例生成及技术文档沉淀，实现复杂业务场景下的人机协同开发。
+          熟练使用 Cursor、Claude、Codex 等 AI
+          编程工具辅助需求分析、架构设计、代码实现与问题定位；具备 Prompt Engineering 及 Context
+          Engineering 实践经验，能够构建项目级开发规则（Rules）与知识库，辅助完成代码
+          Review、性能优化、测试用例生成及技术文档沉淀，实现复杂业务场景下的人机协同开发。
         </li>
       </ul>
     </div>

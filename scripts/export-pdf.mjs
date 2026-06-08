@@ -50,6 +50,9 @@ try {
     const resumeUrl = new URL('resume', url.endsWith('/') ? url : `${url}/`).href
     await page.goto(resumeUrl, { waitUntil: 'networkidle', timeout: 120_000 })
     await page.waitForSelector('.content', { timeout: 30_000 })
+    await page.evaluate(() => {
+      document.querySelector('.resume-back')?.remove()
+    })
     await page.emulateMedia({ media: 'print' })
     await page.pdf({
       path: outPdf,
