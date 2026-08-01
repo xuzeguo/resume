@@ -48,11 +48,17 @@ import { RouterLink } from 'vue-router'
         </li>
         <li>
           <strong>框架体系：</strong>
-          精通 Vue2/3 及生态（Pinia / Vue Router），理解响应式原理、Diff 算法及组件化设计思想
+          精通 Vue2/3 及生态（Pinia / Vue Router），理解响应式原理、Diff 算法及组件化设计思想；理解
+          React 等主流开源框架的设计逻辑（虚拟 DOM、Fiber 调度、Diff 策略），能够快速上手并参与跨框架技术方案设计
         </li>
         <li>
           <strong>TypeScript：</strong>
           熟练使用泛型与类型设计，提升复杂业务场景下代码可维护性与可扩展性
+        </li>
+        <li>
+          <strong>Web 安全：</strong>
+          熟悉 HTTP/HTTPS 等网络协议及常见加密方式（AES/RSA/摘要算法），了解 XSS、CSRF、SQL
+          注入等常见 Web 攻击形式及防控方法，具备生产环境传输加密与鉴权安全的落地经验
         </li>
         <li>
           <strong>工程化能力：</strong>
@@ -60,15 +66,23 @@ import { RouterLink } from 'vue-router'
         </li>
         <li>
           <strong>架构设计：</strong>
-          具备低代码平台、组件化体系及微前端（qiankun）架构设计与落地经验
+          具备低代码后台管理平台、组件化体系及微前端（qiankun）架构设计与落地经验，熟悉复杂配置类后台（页面渲染引擎、组件配置中心）的设计与实现
         </li>
         <li>
           <strong>复杂交互与数据处理：</strong>
           具备复杂数据建模与高频交互处理经验，能够优化大规模数据渲染与用户体验
         </li>
         <li>
+          <strong>客户端通信与启动器：</strong>
+          具备 Web 端与本地客户端（CATIA）通过 WebSocket 通信、拉起启动的落地经验，能够解决启动可靠性、请求丢失、数据一致性等稳定性问题
+        </li>
+        <li>
+          <strong>支付与稳定性保障：</strong>
+          具备支付/下单等核心链路稳定性问题的排查与解决经验（Token 过期无感续期、失败请求自动重放），保障关键业务链路连续可用
+        </li>
+        <li>
           <strong>全链路理解：</strong>
-          具备 Node.js 基础能力，理解前后端协作流程及接口设计规范
+          理解后端工作逻辑与前后端协作流程，具备 Node.js 开发能力及 pnpm Monorepo 工程实践经验
         </li>
         <li>
           <strong>稳定性与质量保障：</strong>
@@ -225,10 +239,29 @@ import { RouterLink } from 'vue-router'
           缓存与资源策略不足导致 LCP 很差 → 数据缓存与加载/渲染优化 →
           <strong>LCP 约由 56s 降至 5s。</strong>
         </li>
+      </ul>
+
+      <div class="project-title">CATIA 客户端启动器与数据互通</div>
+      <strong class="resume-label">项目描述</strong>
+      <p class="resume-desc">
+        基于 WebSocket 打通 Web 端与本地 CATIA 客户端：Web 端一键拉起客户端并传参，上传零件数据，接收客户端加工后的数据并同步回服务器。
+      </p>
+      <strong class="resume-label">项目亮点</strong>
+      <ul>
         <li>
-          <strong>端侧与多媒体：</strong>
-          32 位环境解码占用高、视频弱网易卡顿 → 解码缓冲区优化 + 断流重连与追帧 →
-          稳定性与弱网可用性改善。
+          <strong>启动可靠性：</strong>
+          客户端启动偶发失败但 Web 端误判成功 → 增加进程检测、心跳检测与超时重试的启动状态检测机制 →
+          启动成功判定更准确，误判率下降。
+        </li>
+        <li>
+          <strong>通信可靠性：</strong>
+          Web 与客户端交互易丢请求 → 每次操作生成唯一任务 ID，通过状态轮询/WebSocket 推送关联结果 →
+          避免请求丢失，交互结果可追溯。
+        </li>
+        <li>
+          <strong>数据一致性：</strong>
+          本地模型与 Web 端展示数据偶发不一致 → 引入数据版本校验与失败恢复机制 →
+          保证 Web 端数据与 CATIA 本地模型状态一致。
         </li>
       </ul>
     </div>
